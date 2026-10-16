@@ -64,7 +64,7 @@ footer a{color:var(--muted)}
 <body>
 <nav><div class="wrap">
   <img src="img/plakette.png" alt=""><b>PACHAPAUL</b>
-  <div class="links"><a href="#musik">Musik</a><a href="#video">Video</a><a href="#about">Über</a></div>
+  <div class="links"><a href="#musik">Alben</a><a href="#singles">Singles</a><a href="#video">Video</a><a href="#about">Über</a></div>
 </div></nav>
 
 <header><div class="wrap">
@@ -81,6 +81,12 @@ footer a{color:var(--muted)}
   <h2>Alben</h2>
   <p class="sub">Alle Alben gibt es auf Spotify, Apple Music, Amazon, YouTube Music und überall, wo es Musik gibt.</p>
   <div class="grid" id="albums"></div>
+</div></section>
+
+<section id="singles"><div class="wrap">
+  <h2>Singles</h2>
+  <p class="sub">Einzelne Songs, ausgekoppelt mit eigenem Cover.</p>
+  <div class="grid" id="singlegrid"></div>
 </div></section>
 
 <section id="video"><div class="wrap">
@@ -125,10 +131,17 @@ const ALBEN=[
  ['sessions-2','Sessions, Vol. 2','Sessions','2026','2OLnj0ajGYC9YzgSSTmKIJ'],
  ['sessions-1','Sessions, Vol. 1','Sessions','2026','2UlKgazVxdEWr1D8J16YYo']
 ];
-document.getElementById('albums').innerHTML=ALBEN.map(([img,t,g,d,id])=>{
+const SINGLES=[
+ ['lied-fuer-danach','Lied für danach','Single · Punk-Ballade','September 2026','1oMNbvZMXizSRrcg8bL4fq'],
+ ['voll-cringe-brudi','Voll cringe, Brudi','Single Mix · Punkrock','September 2026','0COArsAJGnaNMf02XyZRdj'],
+ ['todavia','Todavía No Está Escrito','Single · Ballade · Spanisch','September 2026','1zWZJBWRqwrZujVN8K9ebx']
+];
+const card=([img,t,g,d,id])=>{
  const inner=`<img src="img/${img}.jpg" alt="Cover ${t}" loading="lazy"><div><h3>${t}</h3><p>${g}</p><span class="tag">${id?d+' · Anhören ↗':d}</span></div>`;
  return id?`<a class="album" href="${S+id}" target="_blank" rel="noopener">${inner}</a>`:`<div class="album soon">${inner}</div>`;
-}).join('');
+};
+document.getElementById('albums').innerHTML=ALBEN.map(card).join('');
+document.getElementById('singlegrid').innerHTML=SINGLES.map(card).join('');
 </script>
 </body>
 </html>
