@@ -49,6 +49,8 @@ h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px}
 .video span{position:absolute;inset:0;display:grid;place-items:center}
 .video span i{width:84px;height:84px;border-radius:50%;background:rgba(226,55,43,.92);display:grid;place-items:center;font-style:normal;font-size:34px;padding-left:6px}
 .video:hover span i{transform:scale(1.06)}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:26px}
+.video b{position:absolute;left:0;right:0;bottom:0;padding:14px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-size:17px}
 .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .about p{margin-bottom:16px}
 .facts{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
@@ -64,7 +66,7 @@ footer a{color:var(--muted)}
 <body>
 <nav><div class="wrap">
   <img src="img/plakette.png" alt=""><b>PACHAPAUL</b>
-  <div class="links"><a href="#musik">Alben</a><a href="#singles">Singles</a><a href="#video">Video</a><a href="#about">Über</a></div>
+  <div class="links"><a href="#musik">Alben</a><a href="#singles">Singles</a><a href="#video">Videos</a><a href="#about">Über</a></div>
 </div></nav>
 
 <header><div class="wrap">
@@ -90,12 +92,18 @@ footer a{color:var(--muted)}
 </div></section>
 
 <section id="video"><div class="wrap">
-  <h2>Video</h2>
-  <p class="sub">„Lied für danach“ – nach der Demo, nach der Kneipe, nach der Party.</p>
-  <a class="video" href="https://youtu.be/DJdiFkMXhdU" target="_blank" rel="noopener">
-    <img src="img/video-lied-fuer-danach.jpg" alt="Musikvideo Lied für danach">
-    <span><i>▶</i></span>
-  </a>
+  <h2>Videos</h2>
+  <p class="sub">Musikvideos auf YouTube – ein Klick öffnet das Video.</p>
+  <div class="vgrid">
+    <a class="video" href="https://youtu.be/O_4QH4nQ8zY" target="_blank" rel="noopener">
+      <img src="img/video-voll-cringe.jpg" alt="Musikvideo Voll cringe, Brudi">
+      <span><i>▶</i></span><b>Voll cringe, Brudi</b>
+    </a>
+    <a class="video" href="https://youtu.be/DJdiFkMXhdU" target="_blank" rel="noopener">
+      <img src="img/video-lied-fuer-danach.jpg" alt="Musikvideo Lied für danach">
+      <span><i>▶</i></span><b>Lied für danach</b>
+    </a>
+  </div>
 </div></section>
 
 <section id="about"><div class="wrap about">
