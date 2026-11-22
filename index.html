@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pachapaul – Musik mit Haltung</title>
-<meta name="description" content="Pachapaul – Musik aus München. Deutschpop, Punk, Rock, Reggaeton und Meditation. Texte mit Haltung, Sound mit KI.">
+<meta name="description" content="Pachapaul – Musik aus München. Deutschpop, Punk, Rock, Reggae, Reggaeton und Meditation. Texte mit Haltung, Sound mit KI.">
 <meta property="og:title" content="Pachapaul – Musik mit Haltung">
-<meta property="og:description" content="Deutschpop, Punk, Rock, Reggaeton und Meditation. Alle Alben auf Spotify.">
+<meta property="og:description" content="Deutschpop, Punk, Rock, Reggae, Reggaeton und Meditation. Alle Alben auf Spotify.">
 <meta property="og:image" content="img/og.jpg">
 <link rel="icon" href="favicon.png">
 <style>
@@ -95,9 +95,13 @@ footer a{color:var(--muted)}
   <h2>Videos</h2>
   <p class="sub">Musikvideos auf YouTube – ein Klick öffnet das Video.</p>
   <div class="vgrid">
+    <a class="video" href="https://youtu.be/3HMuYnwJMQ0" target="_blank" rel="noopener">
+      <img src="https://i.ytimg.com/vi/3HMuYnwJMQ0/hqdefault.jpg" alt="Musikvideo No Place for Hate" style="aspect-ratio:16/9;object-fit:cover">
+      <span><i>▶</i></span><b>No Place for Hate (neu)</b>
+    </a>
     <a class="video" href="https://youtu.be/22MrPXiX2Yg" target="_blank" rel="noopener">
       <img src="https://i.ytimg.com/vi/22MrPXiX2Yg/hqdefault.jpg" alt="Musikvideo Dos por Uno" style="aspect-ratio:16/9;object-fit:cover">
-      <span><i>▶</i></span><b>Dos por Uno (neu)</b>
+      <span><i>▶</i></span><b>Dos por Uno</b>
     </a>
     <a class="video" href="https://youtu.be/6EuafKUH5_8" target="_blank" rel="noopener">
       <img src="img/e-six-party.jpg" alt="Musikvideo E-Six (Party Extended)" style="aspect-ratio:16/9;object-fit:cover">
@@ -126,7 +130,7 @@ footer a{color:var(--muted)}
   </div>
   <ul class="facts">
     <li>Herkunft <span>München</span></li>
-    <li>Genres <span>Deutschpop · Punk · Rock · Reggaeton · Meditation</span></li>
+    <li>Genres <span>Deutschpop · Punk · Rock · Reggae · Reggaeton · Meditation</span></li>
     <li>Sprachen <span>Deutsch · Englisch · Spanisch</span></li>
     <li>Spotify <span><a href="https://open.spotify.com/artist/2gtdG1sR7cciocE37CeNYg" target="_blank" rel="noopener">Pachapaul</a></span></li>
     <li>YouTube <span><a href="https://www.youtube.com/@pachapaulmusic" target="_blank" rel="noopener">@pachapaulmusic</a></span></li>
@@ -141,7 +145,9 @@ footer a{color:var(--muted)}
 <script>
 const S='https://open.spotify.com/album/';
 const ALBEN=[
- ['laut-und-klar','Laut & Klar','Deutschpunk · 12 Songs','Erscheint bald',''],
+ ['no-place-for-hate','No Place for Hate','Roots Reggae · 14 Songs','Bald im Store · Ganzes Album auf YouTube','https://youtu.be/tsGlArO-k9U'],
+ ['reggaeton-de-sudamerica','Reggaeton de Sudamérica','Reggaeton · Salsa · 16 Songs','Bald im Store · Ganzes Album auf YouTube','https://youtu.be/qOIGwPaWjwo'],
+ ['laut-und-klar','Laut & Klar','Deutschpunk · 12 Songs','Erscheint am 27.11.2026',''],
  ['herzarbeit','Herzarbeit','Deutschpop · 12 Songs','Erscheint bald',''],
  ['pacha-rock','Pacha Rock','Rock · Englisch','Oktober 2026','6yMsQZ2416wXV7ea7g3Xvt'],
  ['agua-tierra-luz','Agua, Tierra, Luz','Meditation · Chill','Oktober 2026','3bw0iiQb2NXAzVFe8cMV3y'],
@@ -160,8 +166,8 @@ const SINGLES=[
  ['todavia','Todavía No Está Escrito','Single · Ballade · Spanisch','September 2026','1zWZJBWRqwrZujVN8K9ebx']
 ];
 const card=([img,t,g,d,id])=>{
- const inner=`<img src="img/${img}.jpg" alt="Cover ${t}" loading="lazy"><div><h3>${t}</h3><p>${g}</p><span class="tag">${id?d+' · Anhören ↗':d}</span></div>`;
- return id?`<a class="album" href="${S+id}" target="_blank" rel="noopener">${inner}</a>`:`<div class="album soon">${inner}</div>`;
+ const inner=`<img src="img/${img}.jpg" alt="Cover ${t}" loading="lazy"><div><h3>${t}</h3><p>${g}</p><span class="tag">${id?d+(id.startsWith('http')?' ↗':' · Anhören ↗'):d}</span></div>`;
+ return id?`<a class="album" href="${id.startsWith('http')?id:S+id}" target="_blank" rel="noopener">${inner}</a>`:`<div class="album soon">${inner}</div>`;
 };
 document.getElementById('albums').innerHTML=ALBEN.map(card).join('');
 document.getElementById('singlegrid').innerHTML=SINGLES.map(card).join('');
